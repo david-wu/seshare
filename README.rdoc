@@ -27,3 +27,14 @@ Things you may want to cover:
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
+
+#phase 4
+each account has only 1-2 users accessing it at once
+users can share accounts with each other
+
+
+#phase 5
+users spend credits to rent accounts
+users earn credits by renting out accounts
+account rates change automatically, but can also be set manually
+

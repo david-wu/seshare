@@ -1,14 +1,23 @@
 class User < ActiveRecord::Base
+
 	include BCrypt
 
-	validates :email, presence: true, uniqueness: true
-	validates :username, presence: true, uniqueness: true
-	validates :password, length: { in: 6..12, allow_nil: true}
-	validates :password_digest, presence: true, uniqueness: true
-	before_create :ensure_session_token
+	has_many :accounts
 
+	validates :email, presence: true, uniqueness: true
+	validates :password, length: { minimum: 6, allow_nil: true}
+	validates :password_digest, presence: true, uniqueness: true
+	validates :credit, presence: true
+
+	before_validation :ensure_session_token
+	before_validation :ensure_credit
+	
 	def ensure_session_token
 		self.session_token ||= SecureRandom.urlsafe_base64(16)
+	end
+
+	def ensure_credit
+		self.credit ||= 0
 	end
 
 	def password=(pass)

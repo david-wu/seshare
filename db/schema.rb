@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140731165616) do
   create_table "accounts", force: true do |t|
     t.integer  "user_id",     null: false
     t.string   "domain",      null: false
+    t.text     "cookie",      null: false
     t.string   "title"
     t.string   "description"
     t.datetime "created_at"
@@ -29,16 +30,17 @@ ActiveRecord::Schema.define(version: 20140731165616) do
   add_index "accounts", ["user_id"], name: "index_accounts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "username"
-    t.string   "password_digest"
-    t.string   "session_token"
+    t.string   "email",           null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "password_digest", null: false
+    t.string   "session_token",   null: false
+    t.integer  "credit",          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
