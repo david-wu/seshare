@@ -1,31 +1,29 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+front end
+user auth
+browse all available accounts
+create account
+	locally save user login data
+		username/password
+		domain
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+keep all data about cookies in a cookie
+	faster loads
+
+CookieMart
+	current tab domain
+		list all cookie/accounts available and their owners
+			order by -(number of times cookie was swapped out)
+			by default, use the highest ranked cookie
+	test run accounts
+
+	available accounts put in reserve while being displayed
+	recently used accounts put at top
+
+rent out account
+borrow account
 
 
 #phase 4

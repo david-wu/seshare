@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     resources :users
+    post 'users/login', to: 'users#sign_in'
     resources :accounts
   end
   # The priority is based upon order of creation: first created -> highest priority.

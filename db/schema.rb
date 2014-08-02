@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140731165616) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: true do |t|
-    t.integer  "user_id",     null: false
+    t.integer  "user_id"
     t.string   "domain",      null: false
     t.text     "cookie",      null: false
     t.string   "title"
