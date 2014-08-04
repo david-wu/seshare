@@ -7,12 +7,13 @@ class CreateAccounts < ActiveRecord::Migration
       t.text :cookie, null: false
       t.string :title
       t.string :description
-
+      t.string :url
+      
       t.timestamps
     end
 
 		# force single account per domain
-    # add_index :accounts, [:user_id, :domain], unique: true
+    add_index :accounts, [:cookie, :domain], unique: true
     add_index :accounts, :user_id
     add_index :accounts, :domain
 

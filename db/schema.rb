@@ -22,10 +22,12 @@ ActiveRecord::Schema.define(version: 20140731165616) do
     t.text     "cookie",      null: false
     t.string   "title"
     t.string   "description"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "accounts", ["cookie", "domain"], name: "index_accounts_on_cookie_and_domain", unique: true, using: :btree
   add_index "accounts", ["domain"], name: "index_accounts_on_domain", using: :btree
   add_index "accounts", ["user_id"], name: "index_accounts_on_user_id", using: :btree
 
